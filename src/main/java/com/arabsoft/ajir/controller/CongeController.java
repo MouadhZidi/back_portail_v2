@@ -16,11 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.arabsoft.ajir.dao.AutorisationDao;
 import com.arabsoft.ajir.dao.CongeRep;
 import com.arabsoft.ajir.dao.GetConge;
 import com.arabsoft.ajir.dao.PointageDAO;
 import com.arabsoft.ajir.dao.RetardDAO;
 import com.arabsoft.ajir.dao.TypeBulletinDao;
+import com.arabsoft.ajir.entities.Autorisation;
 import com.arabsoft.ajir.entities.DemCng;
 import com.arabsoft.ajir.entities.Pointer;
 import com.arabsoft.ajir.entities.Retard;
@@ -43,7 +45,8 @@ public class CongeController {
 	@Autowired 
 	TypeBulletinDao bulletinDao;
 	
-	
+	@Autowired
+	AutorisationDao autorisationDao;
 	
 	@Autowired RetardDAO retarddao;
 	@Autowired PointageDAO pointagedao;
@@ -67,6 +70,10 @@ public class CongeController {
 	}
 	
 	
+	@GetMapping("/getauto/{codsoc}/{matpers}")
+	public List<Autorisation> getAutorisation(@PathVariable("codsoc") String code,@PathVariable("matpers")String mat){
+		return autorisationDao.getAutorisstion(code, mat);
+	}
 	
 
 	@CrossOrigin
