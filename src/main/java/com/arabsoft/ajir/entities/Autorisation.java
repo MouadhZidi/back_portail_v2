@@ -26,7 +26,7 @@ public class Autorisation {
 	@Column(insertable = false,updatable = false)
 	private Long num_aut;
 	
-	
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date dat_fin_aut;  
 	private String  cod_aut;
 
@@ -56,6 +56,22 @@ public class Autorisation {
 	  private String 	  ven  ;
 	  private String   sam        ;
 	  private String   etat_auto  ;
+	  private String lib_aut;
+	  
+	  
+	  
+	public AutorisationPK getId() {
+		return id;
+	}
+	public void setId(AutorisationPK id) {
+		this.id = id;
+	}
+	public String getLib_aut() {
+		return lib_aut;
+	}
+	public void setLib_aut(String lib_aut) {
+		this.lib_aut = lib_aut;
+	}
 	public String getCod_soc() {
 		return cod_soc;
 	}
@@ -247,6 +263,51 @@ public class Autorisation {
 	}
 	public void setEtat_auto(String etat_auto) {
 		this.etat_auto = etat_auto;
+	}
+	public Autorisation(AutorisationPK id, String cod_soc, String mat_pers, Date dat_debut_aut, Long num_aut,
+			Date dat_fin_aut, String cod_aut, Long min_s, Long heur_r, Long min_r, Long duree, Date dat_decision,
+			String num_decision, String obs_aut, String cod_ur, String cod_serv, String cod_class, String cod_metier,
+			String poste_trav, String org_serv, Date dat_saisie, Date dat_maj, String cod_user, Long duree_m,
+			String typ_aut, Long duree_j, String lun, String mar, String mer, String jeu, String ven, String sam,
+			String etat_auto, String lib_aut) {
+		super();
+		this.id = id;
+		this.cod_soc = cod_soc;
+		this.mat_pers = mat_pers;
+		this.dat_debut_aut = dat_debut_aut;
+		this.num_aut = num_aut;
+		this.dat_fin_aut = dat_fin_aut;
+		this.cod_aut = cod_aut;
+		this.min_s = min_s;
+		this.heur_r = heur_r;
+		this.min_r = min_r;
+		this.duree = duree;
+		this.dat_decision = dat_decision;
+		this.num_decision = num_decision;
+		this.obs_aut = obs_aut;
+		this.cod_ur = cod_ur;
+		this.cod_serv = cod_serv;
+		this.cod_class = cod_class;
+		this.cod_metier = cod_metier;
+		this.poste_trav = poste_trav;
+		this.org_serv = org_serv;
+		this.dat_saisie = dat_saisie;
+		this.dat_maj = dat_maj;
+		this.cod_user = cod_user;
+		this.duree_m = duree_m;
+		this.typ_aut = typ_aut;
+		this.duree_j = duree_j;
+		this.lun = lun;
+		this.mar = mar;
+		this.mer = mer;
+		this.jeu = jeu;
+		this.ven = ven;
+		this.sam = sam;
+		this.etat_auto = etat_auto;
+		this.lib_aut = lib_aut;
+	}
+	public Autorisation() {
+		super();
 	}
 	  
 	  

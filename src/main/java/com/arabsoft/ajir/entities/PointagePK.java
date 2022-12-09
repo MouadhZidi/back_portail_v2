@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class PointagePK implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -19,6 +21,7 @@ public class PointagePK implements Serializable{
 	@Column(insertable = false, updatable= false ) 
 	private Long  min_point;	
 	@Column(insertable = false, updatable= false ) 
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date date_point;	
 	@Column(insertable = false, updatable= false ) 
 	private Date  date_j_point;

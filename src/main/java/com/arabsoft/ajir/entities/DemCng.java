@@ -256,6 +256,16 @@ public class DemCng implements Serializable{
 	@Column(name="ID_DEM_CNG")
 	private Long id_dem_cng;
 
+	private String lib_cng;
+	
+	public String getLib_cng() {
+		return lib_cng;
+	}
+
+	public void setLib_cng(String lib_cng) {
+		this.lib_cng = lib_cng;
+	}
+
 	public CleDemCng getId() {
 		return id;
 	}

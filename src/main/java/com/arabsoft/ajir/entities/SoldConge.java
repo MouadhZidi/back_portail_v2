@@ -19,7 +19,10 @@ public class SoldConge implements Serializable {
 
 	@Column(name = "INIT_CNG")
 	private Long init_cng;
-
+	@Column(insertable = false, updatable = false)
+	private String cod_soc;
+	@Column(insertable = false, updatable = false)
+	private String mat_pers;
 	@Column(name = "CUM_CNG")
 	private Long cum_cng;
 
@@ -124,6 +127,22 @@ public class SoldConge implements Serializable {
 		this.valid_droit = valid_droit;
 		this.cng_paye = cng_paye;
 		this.id_sold_cng = id_sold_cng;
+	}
+
+	public String getCod_soc() {
+		return cod_soc;
+	}
+
+	public void setCod_soc(String cod_soc) {
+		this.cod_soc = cod_soc;
+	}
+
+	public String getMat_pers() {
+		return mat_pers;
+	}
+
+	public void setMat_pers(String mat_pers) {
+		this.mat_pers = mat_pers;
 	}
 
 	public SoldCongePK getId() {

@@ -12,7 +12,12 @@ import com.arabsoft.ajir.entities.AutorisationPK;
 
 public interface AutorisationDao extends JpaRepository<Autorisation, AutorisationPK>{
 	
-	@Query("select r from Autorisation r where r.id.cod_soc=:x and r.id.mat_pers=:y")
+	@Query(value="select cod_soc,mat_pers, num_aut, dat_debut_aut, dat_fin_aut, cod_aut,pk_get_lib.GET_TYP_AUTORI$LIB_TYP_AUT(cod_aut) lib_aut, \r\n"
+			+ "etat_aut, heur_s, min_s, \r\n"
+			+ "heur_r, min_r, duree, dat_decision, num_decision, obs_aut, cod_ur, cod_serv, cod_class, cod_metier, poste_trav, org_serv, \r\n"
+			+ "dat_saisie, dat_maj, cod_user, duree_m, typ_aut, duree_j, lun, mar, mer, jeu, ven, sam, etat_auto\r\n"
+			+ "from autorisation_sort where (get_pere_by_pere(cod_soc,:x,:x)=:x or mat_pers=:y)\r\n"
+			+ "and :y in(select mat_pers from service where cod_serv=:x)", nativeQuery=true)
 	public List<Autorisation> getAutorisstion(@Param("x")String codSoc,@Param("y")String mat);
 
 }

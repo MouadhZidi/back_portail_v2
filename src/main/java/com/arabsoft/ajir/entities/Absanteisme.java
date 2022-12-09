@@ -1,11 +1,11 @@
 package com.arabsoft.ajir.entities;
 
-import java.util.Date;
+
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Entity
 public class Absanteisme {
