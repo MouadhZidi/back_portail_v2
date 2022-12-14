@@ -79,7 +79,9 @@ public class CongeController {
 	@GetMapping("/getcongebyeid/{codesoc}/{matpers}")
 	public List<SoldConge>	getcongebyid(@PathVariable("codesoc") String code,@PathVariable("matpers")String mat){
 		return con2.getcongebyid(code, mat);}
-	
+	@GetMapping("/getcongePers/{codesoc}/{matpers}")
+	public List<DemCng>	getcongePers(@PathVariable("codesoc") String code,@PathVariable("matpers")String mat){
+		return con.getCngPers(code, mat);}
 	@GetMapping("/getpointage/{codeServ}/{matpers}")
 	public List<Pointer> getPointage(@PathVariable("codeServ") String codeServ,@PathVariable("matpers")String mat){
 		return pointagedao.getPointage(codeServ, mat);

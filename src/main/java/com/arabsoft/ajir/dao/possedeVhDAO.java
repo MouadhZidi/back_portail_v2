@@ -16,6 +16,7 @@ public interface possedeVhDAO extends JpaRepository<PossedeVh, Integer>{
 	@Query(value="select dt_bul,\r\n"
 			+ "  cod_typ_bul,\r\n"
 			+ "  pk_get_lib.GET_TYP_BULLET$LIB_BULL(cod_typ_bul) lib_bul,\r\n"
+			+ "  PK_GET_LIB.GET_PAR_FIXE$LIB_FIXE(p.abrv_fixe) lib_rebrique,\r\n"
 			+ "  cod_soc,\r\n"
 			+ "  mat_pers,\r\n"
 			+ "  pk_get_lib.Get_personnel$NomPrenom(cod_soc,mat_pers) nom_pers,\r\n"
@@ -47,6 +48,7 @@ public interface possedeVhDAO extends JpaRepository<PossedeVh, Integer>{
 	@Query(value="select dt_bul,\r\n"
 			+ "  cod_typ_bul,\r\n"
 			+ "  pk_get_lib.GET_TYP_BULLET$LIB_BULL(cod_typ_bul) lib_bul,\r\n"
+
 			+ "  cod_soc,\r\n"
 			+ "  mat_pers,\r\n"
 			+ "  pk_get_lib.Get_personnel$NomPrenom(cod_soc,mat_pers) nom_pers,\r\n"

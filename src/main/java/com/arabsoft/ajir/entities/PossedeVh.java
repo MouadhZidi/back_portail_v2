@@ -42,6 +42,7 @@ public class PossedeVh {
 	  private Float nombre;
 	  private Integer seq;
 	  private Float taux;
+	  private String lib_rebrique;
 	public Date getDt_bul() {
 		return dt_bul;
 	}
@@ -174,10 +175,26 @@ public class PossedeVh {
 	public void setTaux(Float taux) {
 		this.taux = taux;
 	}
+	public String getLib_rebrique() {
+		return lib_rebrique;
+	}
+	public void setLib_rebrique(String lib_rebrique) {
+		this.lib_rebrique = lib_rebrique;
+	}
+	@Override
+	public String toString() {
+		return "PossedeVh [dt_bul=" + dt_bul + ", dateBul=" + dateBul + ", cod_typ_bul=" + cod_typ_bul + ", lib_bul="
+				+ lib_bul + ", cod_soc=" + cod_soc + ", mat_pers=" + mat_pers + ", nom_pers=" + nom_pers + ", datev="
+				+ datev + ", bul_cod_typ_bul=" + bul_cod_typ_bul + ", abrv_fixe=" + abrv_fixe + ", lib_fixe=" + lib_fixe
+				+ ", mnt_gain=" + mnt_gain + ", mnt_charge=" + mnt_charge + ", montant=" + montant + ", cod_serv="
+				+ cod_serv + ", lib_serv=" + lib_serv + ", type_par=" + type_par + ", cod_niv=" + cod_niv + ", num_niv="
+				+ num_niv + ", nombre=" + nombre + ", seq=" + seq + ", taux=" + taux + ", lib_rebrique=" + lib_rebrique
+				+ "]";
+	}
 	public PossedeVh(Date dt_bul, String dateBul, String cod_typ_bul, String lib_bul, String cod_soc, String mat_pers,
 			String nom_pers, Date datev, String bul_cod_typ_bul, String abrv_fixe, String lib_fixe, String mnt_gain,
 			String mnt_charge, Float montant, String cod_serv, String lib_serv, String type_par, Integer cod_niv,
-			Integer num_niv, Float nombre, Integer seq, Float taux) {
+			Integer num_niv, Float nombre, Integer seq, Float taux, String lib_rebrique) {
 		super();
 		this.dt_bul = dt_bul;
 		this.dateBul = dateBul;
@@ -201,18 +218,14 @@ public class PossedeVh {
 		this.nombre = nombre;
 		this.seq = seq;
 		this.taux = taux;
+		this.lib_rebrique = lib_rebrique;
 	}
 	public PossedeVh() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public String toString() {
-		return "PossedeVh {dateBul=" + dateBul + ", cod_typ_bul=" + cod_typ_bul + ", cod_soc=" + cod_soc + ", mat_pers="
-				+ mat_pers + "}";
-	}
-	
-	
 	  
+	  
+	  
+
 	  
 }
