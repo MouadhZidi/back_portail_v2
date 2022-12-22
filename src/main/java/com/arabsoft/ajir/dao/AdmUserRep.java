@@ -16,6 +16,7 @@ import com.arabsoft.ajir.entities.AdmUser;
 @Repository
 public interface AdmUserRep extends JpaRepository<AdmUser, Long>{
 	  Boolean existsByUselogin(String email);
+
 	 AdmUser findByUselogin(String username);
 	  // AdmUser findByUselogin(String username);
 	  Optional<AdmUser> findBymatpers(String matpers);
